@@ -1,0 +1,175 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f37900;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    overflow: hidden; /* Impede que o conteúdo extra seja visível */
+}
+
+/* Remove a transformação de translateY e mantém o controle apenas pela opacidade */
+.carousel > section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1s ease; /* Apenas anima a opacidade */
+}
+
+/* A classe 'visible' vai tornar a seção visível */
+.carousel > section.visible {
+    opacity: 1; /* Torna a seção visível com efeito de fade-in */
+}
+
+/* Estilo da seção hero */
+.hero {
+    background-image: url('../img/thoughtful-pretty-millennial-female-with-afro-hair-listens-music-concentrated-aside.jpg');
+    background-color: rgba(255, 140, 0, 0.875);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    opacity: 0;
+    animation: slideIn 2s ease-out forwards;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: slideIn 2s 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.hidden-section {
+    background-image: url('../img/indoor-shot-pensive-afro-american-woman-concentrated-keeps-finger-chin-considers-something-mind-while-listening-calm-melody-stereo-headphones.jpg');
+    background-color: rgba(58, 16, 0, 0.75); /* Fundo sutil para contraste */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha o conteúdo no centro */
+    align-items: center; /* Alinha os itens horizontalmente no centro */
+    text-align: center; /* Alinha o texto no centro */
+    height: 100%; /* Ocupa toda a altura */
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(100%); /* Começa fora da tela */
+}
+
+.hidden-section.visible {
+    opacity: 1;
+    transform: translateX(0%); /* Move para a posição central */
+}
+
+.hidden-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hidden-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.hidden-section h2 i {
+    margin-right: 10px;
+}
+
+.hidden-section .hidden-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ajustes para maior acessibilidade e legibilidade */
+@media (max-width: 768px) {
+    .hidden-section h1 {
+        font-size: 2.5rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+    .hidden-section h2 {
+        font-size: 1.25rem; /* Ajusta o tamanho das h2 em telas menores */
+    }
+}
+
+.second-section {
+    background-image: url('../img/people-entertainment-hobby-concept-cheerful-young-african-american-woman-with-curly-hair-holds-modern-smartphone-listens-music-via-stereo-headphones-poses-against-vivid-orange-background.jpg');
+    background-color: rgba(255, 140, 0, 0.8); /* Fundo laranja para manter o padrão */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(100%); /* Começa fora da tela */
+}
+
+.second-section.visible {
+    opacity: 1;
+    transform: translateX(0%); /* Move para a posição central */
+}
+
+.second-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.homepage-link {
+    position: absolute;
+    bottom: 30px; 
+    right: 30px; 
+    font-size: 1.5rem;
+    color: white;
+    background-color: #f37900;
+    padding: 15px 20px;
+    border-radius: 25%; 
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+}
+
+.homepage-link:hover {
+    background-color: #5d2200; 
+}
+

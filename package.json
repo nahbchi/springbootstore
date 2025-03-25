@@ -1,0 +1,19 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "description": "A simple store in Spring Boot",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/main/resources/static/css/styles.scss -o ./src/main/resources/static/css/output.css --watch",
+    "build:sass": "npx sass ./src/main/resources/static/css/styles.scss ./src/main/resources/static/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.86.0",
+    "tailwindcss": "^4.0.16",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16"
+  }
+}
